@@ -1,0 +1,13 @@
+Ok so getting this to distribute wasn't fun... BUT, I figured it out
+
+HOW TO RUN RAFFLEBOT.TF V3
+
+1. Go to the folder titled "dist"
+2. Find the application titled "run.bat"
+3. Click it
+
+Congratulations, you have successfully run RaffleBot.TF V3.
+
+Enjoy!
+
+Copyright 2020 EHawa Inc. All rights reserved.
