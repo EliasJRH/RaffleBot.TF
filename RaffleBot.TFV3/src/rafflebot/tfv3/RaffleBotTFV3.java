@@ -35,11 +35,8 @@ public class RaffleBotTFV3 {
 		WebDriver driver = new ChromeDriver(chromeOptions); // creates webdriver
 		driver.get("https://scrap.tf/raffles"); // opens scrap.tf/raffles
 		JavascriptExecutor jse = (JavascriptExecutor) driver; // creates javascripexecutor
-		r.mouseMove(1300, 140); // moves to the mouse to the sign in button
-		r.mousePress(InputEvent.BUTTON1_MASK); // clicks button
-		r.mouseRelease(InputEvent.BUTTON1_MASK);
-		WebElement userField = driver.findElement(By.id("steamAccountName")); // enter users' username password and
-																				// steam guard code to login
+		driver.findElement(By.cssSelector("#navbar-main > ul.nav.navbar-nav.navbar-right")).click(); //finds and clicks the login button
+		WebElement userField = driver.findElement(By.id("steamAccountName")); // enter users' username and password																// steam guard code to login
 		userField.sendKeys(user);
 		WebElement passField = driver.findElement(By.id("steamPassword"));
 		passField.sendKeys(pass);
