@@ -91,7 +91,6 @@ public class RaffleBotTFV3 {
 			}
             listOfRaffles = driver.findElements(By.className("panel-raffle"));
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-            System.out.println(sameHeightCount);
         }
         System.out.println("All raffles retrieved");
 //        JOptionPane.showMessageDialog(null, "All raffles retrieved");
