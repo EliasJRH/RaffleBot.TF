@@ -6,8 +6,9 @@ A version of java on your system
 
 **How to use**  
 Once you've ensured that you have an up-to-date version of java installed on your computer,
-1. Go to RaffleBot.TFV3 -> dist, where you'll find run.bat
-2. Run that file
+1. Download and unzip
+2. Go to RaffleBot.TFV3 -> dist, where you'll find run.bat
+3. Run that file
 
 Yes this program is a little janky.
 Yes this works.
