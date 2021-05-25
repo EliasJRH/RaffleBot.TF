@@ -29,9 +29,6 @@ public class RaffleBotTFV3 {
 
         //Getting user login info
 		System.out.println("RaffleBot.TF Version 3");
-		System.out.println("This program makes use of JPanels to let you know when certain actions have finished. \n" +
-				"Please make sure to close these when they show up so the program can finish " +
-				"A JPanel will appear shortly after logging in and after entering all raffles");
         System.out.print("Enter your steam username: ");
         String user = scanner.nextLine();
         System.out.print("Enter your steam password (Case-Sensitive): ");
@@ -86,7 +83,6 @@ public class RaffleBotTFV3 {
 		int sameHeightCount = 0;
         while (listOfRaffles.size() != numOfRafflesI || sameHeightCount > 50) {
 			currentScrollHeight = Integer.parseInt(String.valueOf(((JavascriptExecutor) driver).executeScript("return document.body.scrollHeight")));
-			System.out.println(currentScrollHeight);
 			if (currentScrollHeight > lastScrollHeight){
 				lastScrollHeight = currentScrollHeight;
 				sameHeightCount = 0;
@@ -97,7 +93,7 @@ public class RaffleBotTFV3 {
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight);");
         }
         System.out.println("All raffles retrieved");
-        JOptionPane.showMessageDialog(null, "All raffles retrieved");
+//        JOptionPane.showMessageDialog(null, "All raffles retrieved");
 
 		/*The two above steps ensure that the page is fully loaded before using JSoup to retrieve
 		the page source and all the links in it
@@ -107,7 +103,6 @@ public class RaffleBotTFV3 {
         String HTML = driver.getPageSource();
         Document doc = Jsoup.parse(HTML);
         Elements links = doc.select("a[href]");
-        System.out.println(links.size());
 
         //Enters all raffles
         for (Element link : links) {
@@ -130,6 +125,7 @@ public class RaffleBotTFV3 {
                 than 2 seconds apart */
             }
         }
-        JOptionPane.showMessageDialog(null, "All Raffles Entered");
+        System.out.println("All raffles entered");
+//        JOptionPane.showMessageDialog(null, "All Raffles Entered");
     }
 }
