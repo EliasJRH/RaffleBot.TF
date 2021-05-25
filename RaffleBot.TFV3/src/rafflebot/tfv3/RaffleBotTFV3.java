@@ -30,7 +30,7 @@ public class RaffleBotTFV3 {
         //Getting user login info
 		System.out.println("RaffleBot.TF Version 3");
 		System.out.println("This program makes use of JPanels to let you know when certain actions have finished. \n" +
-				"Please make sure to close these when they show up so the program can finish" +
+				"Please make sure to close these when they show up so the program can finish " +
 				"A JPanel will appear shortly after logging in and after entering all raffles");
         System.out.print("Enter your steam username: ");
         String user = scanner.nextLine();
