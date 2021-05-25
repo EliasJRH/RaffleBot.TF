@@ -28,7 +28,7 @@ public class RaffleBotTFV3 {
         Scanner scanner = new Scanner(System.in);
 
         //Getting user login info
-		System.out.println("RaffleBot.TF Version 3");
+		System.out.println("RaffleBot.TF Version 4");
         System.out.print("Enter your steam username: ");
         String user = scanner.nextLine();
         System.out.print("Enter your steam password (Case-Sensitive): ");
@@ -81,7 +81,7 @@ public class RaffleBotTFV3 {
 		int lastScrollHeight = Integer.parseInt(String.valueOf(((JavascriptExecutor) driver).executeScript("return document.body.scrollHeight")));
 		int currentScrollHeight = 0;
 		int sameHeightCount = 0;
-        while (listOfRaffles.size() != numOfRafflesI || sameHeightCount > 50) {
+        while (listOfRaffles.size() != numOfRafflesI && sameHeightCount < 50) {
 			currentScrollHeight = Integer.parseInt(String.valueOf(((JavascriptExecutor) driver).executeScript("return document.body.scrollHeight")));
 			if (currentScrollHeight > lastScrollHeight){
 				lastScrollHeight = currentScrollHeight;
@@ -91,6 +91,7 @@ public class RaffleBotTFV3 {
 			}
             listOfRaffles = driver.findElements(By.className("panel-raffle"));
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+            System.out.println(sameHeightCount);
         }
         System.out.println("All raffles retrieved");
 //        JOptionPane.showMessageDialog(null, "All raffles retrieved");
@@ -118,7 +119,8 @@ public class RaffleBotTFV3 {
                             "#pid-viewraffle > div.container > div > div.well.raffle-well > div.row.raffle-opts-row > div.col-xs-7.enter-raffle-btns > button:nth-child(3)"))
                             .click();
                 } catch (NoSuchElementException e) {
-                    System.out.println(e);
+                    //The only reason for this error is if the user had already entered the raffle
+                    System.out.println("Raffle already entered");
                 }
                 Thread.sleep(2000);
                 /* the sleeps are necesarry as scrap.tf doesn't allow raffles to be enter less
