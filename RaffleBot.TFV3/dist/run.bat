@@ -1,1 +1,1 @@
-java -jar RaffleBot.TFV3.jar
+java -jar RaffleBot.TF-master.jar
